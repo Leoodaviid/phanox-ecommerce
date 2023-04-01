@@ -14,7 +14,7 @@ const HeroBanner = ({ heroBanner }: HeroBannerProps) => {
       <div>
         <p className='text-sm'>{heroBanner.smallText}</p>
         <h3 className='text-6xl font-bold mt-[4px]'>{heroBanner.midText}</h3>
-        <h1 className='text-white text-[10em] upercase -ml-5'>{heroBanner.largeText1}</h1>
+        <h1 className='text-white font-bold text-[10em] upercase -ml-5'>{heroBanner.largeText1}</h1>
         <img
           src={urlFor(heroBanner.image).url()}
           alt='headphone'
