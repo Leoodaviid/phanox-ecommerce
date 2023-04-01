@@ -22,7 +22,7 @@ const Home = async () => {
         ))}
         <br />
       </div>
-      <FooterBanner />
+      <FooterBanner footerBanner={bannerData && bannerData[0]} />
     </>
   )
 }
