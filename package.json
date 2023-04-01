@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@sanity/cli": "^3.8.1",
     "@sanity/image-url": "^1.0.2",
     "@tsed/stripe": "^7.18.2",
     "@types/node": "18.15.11",
@@ -19,12 +18,14 @@
     "eslint": "8.37.0",
     "eslint-config-next": "13.2.4",
     "next": "13.2.4",
+    "next-sanity": "^4.1.6",
+    "next-sanity-client": "^1.0.6",
     "next-sanity-image": "^6.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-hot-toast": "^2.4.0",
     "react-icons": "^4.8.0",
-    "stripe": "^11.16.0",
+    "stripe": "^11.17.0",
     "typescript": "5.0.2"
   },
   "devDependencies": {
