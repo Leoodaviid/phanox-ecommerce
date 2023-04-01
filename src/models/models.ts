@@ -1,7 +1,9 @@
 export interface ProductsData {
   image: string[]
   name: string
-  slug: string
+  slug: {
+    current?: string
+  }
   price: number
   details: string
 }
