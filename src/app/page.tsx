@@ -14,9 +14,7 @@ const Home = async () => {
         <h2 className='text-4xl font-extrabold'>Produtos mais vendidos</h2>
         <p className='text-xs font-extralight'>Música no seu estilo</p>
       </div>
-      <div
-        className={`${styles.flexCenter} w-full py-8 grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4`}
-      >
+      <div className={`flex flex-wrap justify-center gap-16 mt-2 w-full p-2.5`}>
         {productsData?.map((product, index) => (
           <Product key={index} product={product} />
         ))}

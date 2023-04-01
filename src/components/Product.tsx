@@ -11,9 +11,7 @@ const Product = ({ product: { image, name, slug, price } }: ProductProps) => {
   return (
     <div>
       <Link href={`/product/${slug.current}`}>
-        <div
-          className={`flex flex-col mb-9 justify-center items-center cursor-pointer scale-110 transition-transform duration-500 ease-in text-[#324d67] hover:scale-125`}
-        >
+        <div className='cursor-pointer scale-110 transition-transform duration-500 ease-in text-[#324d67] hover:scale-125'>
           <img
             src={urlFor(image && image[0]).url()}
             width={200}
