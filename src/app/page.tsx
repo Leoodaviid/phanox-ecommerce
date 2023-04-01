@@ -9,15 +9,18 @@ const Home = async () => {
 
   return (
     <>
-      <HeroBanner heroBanner={bannerData.length && bannerData[0]} />
-      <div className='text-center my-8 text-[#324d67]'>
+      <HeroBanner heroBanner={bannerData && bannerData[0]} />
+      <div className='text-center py-8 text-[#324d67]'>
         <h2 className='text-4xl font-extrabold'>Produtos mais vendidos</h2>
-        <p className='text-xs font-extralight'>Fones de ouvido variados</p>
+        <p className='text-xs font-extralight'>Música no seu estilo</p>
       </div>
-      <div className={`${styles.flexCenter} w-full flex-wrap gap-4`}>
-        {productsData?.map((product) => product.name)}
+      <div
+        className={`${styles.flexCenter} w-full py-8 grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4`}
+      >
+        {productsData?.map((product, index) => (
+          <Product key={index} product={product} />
+        ))}
         <br />
-        {bannerData?.map((banner) => banner.discount)}
       </div>
       <FooterBanner />
     </>
