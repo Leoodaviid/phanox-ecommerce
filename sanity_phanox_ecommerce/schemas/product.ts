@@ -1,7 +1,7 @@
 import {SchemaTypeDefinition} from 'sanity'
 
 const product: SchemaTypeDefinition = {
-  name: 'Product',
+  name: 'product',
   title: 'Product',
   type: 'document',
   fields: [
