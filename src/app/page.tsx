@@ -1,7 +1,6 @@
 // 'use client'
 import { Product, FooterBanner, HeroBanner } from '@/components'
 import { getBanner, getProducts } from '@/lib/api'
-import styles from '../styles'
 
 const Home = async () => {
   const productsData = await getProducts({ cache: 'no-store' })

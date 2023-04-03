@@ -2,7 +2,6 @@
 import { ProductsData } from '@/models/models'
 import { urlFor } from '@/lib/client'
 import Link from 'next/link'
-import styles from '../styles'
 
 interface ProductProps {
   product: ProductsData
