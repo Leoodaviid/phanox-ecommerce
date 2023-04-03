@@ -1,10 +1,10 @@
 'use client'
-import { ProductsData } from '@/models/models'
+import { ProductData } from '@/models/models'
 import { urlFor } from '@/lib/client'
 import Link from 'next/link'
 
 interface ProductProps {
-  product: ProductsData
+  product: ProductData
 }
 const Product = ({ product: { image, name, slug, price } }: ProductProps) => {
   return (
