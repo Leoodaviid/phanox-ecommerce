@@ -13,6 +13,19 @@ module.exports = {
       transitionTimingFunction: {
         'out-flex': 'cubic-bezier(0.05, 0.6, 0.4, 0.9)',
       },
+      keyframes: {
+        marquee: {
+          from: {
+            transform: 'translateX(50%)'
+          },
+          to: {
+            transform: 'translateX(-50%)'
+          }
+        }
+      },
+      animation: {
+        marquee: 'marquee 10s linear infinite'
+      }
     },
   },
   plugins: [],
