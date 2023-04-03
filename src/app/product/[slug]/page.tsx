@@ -4,7 +4,8 @@ import { Product } from '@/components'
 import { getProducts, getProductsSlug } from '@/lib/api'
 import { urlFor } from '@/lib/client'
 import { AiOutlineMinus, AiOutlinePlus, AiFillStar, AiOutlineStar } from 'react-icons/ai'
-import { ProductsData } from '@/models/models'
+import { ProductData } from '@/models/models'
+import { useStateContex } from '@/context/StateContext'
 
 interface ProductDetailsProps {
   params: {
@@ -13,9 +14,10 @@ interface ProductDetailsProps {
 }
 
 const ProductDetails = ({ params: { slug } }: ProductDetailsProps) => {
-  const [productData, setProductData] = useState<ProductsData>()
-  const [productsData, setProductsData] = useState<ProductsData[]>([])
+  const [productData, setProductData] = useState<ProductData>()
+  const [productsData, setProductsData] = useState<ProductData[]>([])
   const [index, setIndex] = useState<number>(0)
+  const { decQty, incQty, qty, onAdd } = useStateContex()
 
   useEffect(() => {
     const fetchData = async () => {
@@ -76,11 +78,11 @@ const ProductDetails = ({ params: { slug } }: ProductDetailsProps) => {
           <div className='gap-8 mt-2 flex items-center'>
             <h3>Quantidade:</h3>
             <p className='flex items-center border-2 border-zinc-300'>
-              <span className='border-r-2 border-zinc-300 p-2'>
+              <span className='border-r-2 border-zinc-300 p-2' onClick={decQty}>
                 <AiOutlineMinus />
               </span>
-              <span className=' py-0.5 px-2 text-xl'>0</span>
-              <span className='border-l-2 border-zinc-300 p-2'>
+              <span className=' py-0.5 px-2 text-xl'>{qty}</span>
+              <span className='border-l-2 border-zinc-300 p-2' onClick={incQty}>
                 <AiOutlinePlus />
               </span>
             </p>
@@ -89,6 +91,7 @@ const ProductDetails = ({ params: { slug } }: ProductDetailsProps) => {
             <button
               type='button'
               className='border-2 px-5 py-2.5 mt-10 text-lg font-medium cursor-pointer transition-transform duration-500 ease-in text-[#f02d34] hover:scale-105 z-0'
+              onClick={() => onAdd(productData, qty)}
             >
               Adicionar ao carrinho
             </button>
