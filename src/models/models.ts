@@ -1,4 +1,6 @@
-export interface ProductsData {
+export interface ProductData {
+  _id: string
+  quantity: number
   image: string[]
   name: string
   slug: {
