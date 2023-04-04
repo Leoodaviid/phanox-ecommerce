@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@sanity/image-url": "^1.0.2",
+    "@stripe/stripe-js": "^1.52.0",
     "@tsed/stripe": "^7.18.2",
     "@types/node": "18.15.11",
     "@types/react": "18.0.31",
@@ -26,7 +27,8 @@
     "react-hot-toast": "^2.4.0",
     "react-icons": "^4.8.0",
     "stripe": "^11.17.0",
-    "typescript": "5.0.2"
+    "typescript": "5.0.2",
+    "uninstall": "^0.0.0"
   },
   "devDependencies": {
     "@rocketseat/eslint-config": "^1.2.0",

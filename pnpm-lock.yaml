@@ -3,6 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@rocketseat/eslint-config': ^1.2.0
   '@sanity/image-url': ^1.0.2
+  '@stripe/stripe-js': ^1.52.0
   '@tsed/stripe': ^7.18.2
   '@types/node': 18.15.11
   '@types/react': 18.0.31
@@ -23,9 +24,11 @@ specifiers:
   stripe: ^11.17.0
   tailwindcss: ^3.3.0
   typescript: 5.0.2
+  uninstall: ^0.0.0
 
 dependencies:
   '@sanity/image-url': 1.0.2
+  '@stripe/stripe-js': 1.52.0
   '@tsed/stripe': 7.18.2_stripe@11.17.0
   '@types/node': 18.15.11
   '@types/react': 18.0.31
@@ -43,6 +46,7 @@ dependencies:
   react-icons: 4.8.0_react@18.2.0
   stripe: 11.17.0
   typescript: 5.0.2
+  uninstall: 0.0.0
 
 devDependencies:
   '@rocketseat/eslint-config': 1.2.0_bcnce6t2n5ss3lv2getliffzhq
@@ -369,6 +373,10 @@ packages:
     dependencies:
       base64url: 3.0.1
       tslib: 2.5.0
+    dev: false
+
+  /@stripe/stripe-js/1.52.0:
+    resolution: {integrity: sha512-Ja2VlaTf3kM5tN4Y0sC8T3ibZAnfGUU/QzMAlk/G+Adz2fF1ycTabtSkdSuVP4/adXox8NkPPV4Xndx/EP4fMg==}
     dev: false
 
   /@swc/helpers/0.4.14:
@@ -2970,6 +2978,10 @@ packages:
       has-bigints: 1.0.2
       has-symbols: 1.0.3
       which-boxed-primitive: 1.0.2
+
+  /uninstall/0.0.0:
+    resolution: {integrity: sha512-pjP/0+A4gsbDVa8XH/S2GZdT9NPJW8NFMy3GI7HnsWG+NAmFSSj3QidNosXBI9cPtxxNExEDdhKFO6sli8K3mA==}
+    dev: false
 
   /update-browserslist-db/1.0.10_browserslist@4.21.5:
     resolution: {integrity: sha512-OztqDenkfFkbSG+tRxBeAnCVPckDBcvibKd35yDONx6OU8N7sqgwc7rCbkJ/WcYtVRZ4ba68d6byhC21GFh7sQ==}
