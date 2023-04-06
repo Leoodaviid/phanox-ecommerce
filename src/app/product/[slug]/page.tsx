@@ -48,6 +48,7 @@ const ProductDetails = ({ params: { slug } }: ProductDetailsProps) => {
           <div className='flex justify-center mt-2 gap-4'>
             {image?.map((item, i) => (
               <img
+                key={i}
                 src={urlFor(item).url()}
                 alt=''
                 className={
