@@ -1,7 +1,11 @@
 export interface ProductData {
   _id: string
   quantity: number
-  image: string[]
+  image: {
+    asset: {
+      url: string
+    }
+  }[]
   name: string
   slug: {
     current?: string
