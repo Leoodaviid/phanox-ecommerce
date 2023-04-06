@@ -4,12 +4,35 @@ import { useStateContex } from '@/context/StateContext'
 import { AiOutlineMinus, AiOutlinePlus, AiOutlineLeft, AiOutlineShopping } from 'react-icons/ai'
 import { TiDeleteOutline } from 'react-icons/ti'
 import { urlFor } from '@/lib/client'
+import { toast } from 'react-hot-toast'
+import { fetchPostJSON } from '@/utils/apiHelper'
+import getStripe from '@/lib/getStripe'
+import Stripe from 'stripe'
 import Link from 'next/link'
 
 const Cart = () => {
   const cartRef = useRef<HTMLDivElement>(null)
   const { totalPrice, totalQuanties, cartItems, setShowCart, toggleCartItemQuantity, onRemove } =
     useStateContex()
+
+  const handleCheckout = async () => {
+    const checkoutSession: Stripe.Checkout.Session = await fetchPostJSON(
+      '/api/checkout_sessions',
+      cartItems,
+    )
+    if ((checkoutSession as any).statusCode === 500) {
+      console.error((checkoutSession as any).message)
+      return
+    }
+
+    const stripe = await getStripe()
+    toast.loading('Redirecionando página...')
+    const { error } = await stripe!.redirectToCheckout({
+      sessionId: checkoutSession.id,
+    })
+
+    console.warn(error.message)
+  }
 
   return (
     <div
@@ -95,6 +118,8 @@ const Cart = () => {
               <button
                 type='button'
                 className='w-full max-w-[300px] py-2.5 px-3 rounded-[15px] border-none text-xl uppercase bg-[#f02d34] text-white cursor-pointer mt-10 transition-transform duration-500 ease-in hover:scale-110'
+                onClick={handleCheckout}
+                role='link'
               >
                 Pagar
               </button>
