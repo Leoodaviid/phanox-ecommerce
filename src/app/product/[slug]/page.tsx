@@ -83,12 +83,12 @@ const ProductDetails = ({ params: { slug } }: ProductDetailsProps) => {
           <p className='text-2xl font-bold mt-4 text-[#f02d34]'>{currencyFormat(price)}</p>
           <div className='gap-8 mt-2 flex items-center'>
             <h3>Quantidade:</h3>
-            <p className='flex items-center border-2 border-zinc-300'>
-              <span className='border-r-2 border-zinc-300 p-2' onClick={decQty}>
+            <p className='flex items-center border-2 border-zinc-200'>
+              <span className='border-r-2 border-zinc-200 p-2 text-[#f02d34]' onClick={decQty}>
                 <AiOutlineMinus />
               </span>
               <span className=' py-0.5 px-2 text-xl'>{qty}</span>
-              <span className='border-l-2 border-zinc-300 p-2' onClick={incQty}>
+              <span className='border-l-2 border-zinc-200 p-2 text-green-600' onClick={incQty}>
                 <AiOutlinePlus />
               </span>
             </p>
@@ -96,7 +96,7 @@ const ProductDetails = ({ params: { slug } }: ProductDetailsProps) => {
           <div className='flex flex-col sm:flex-row gap-2'>
             <button
               type='button'
-              className='border-2 px-5 py-2.5 mt-10 text-lg font-medium cursor-pointer transition-transform duration-500 ease-in text-[#f02d34] hover:scale-105 z-0'
+              className='border-2 border-[#f02d34] px-5 py-2.5 mt-10 text-lg font-medium cursor-pointer transition-transform duration-500 ease-in text-[#f02d34] hover:scale-105 z-0'
               onClick={() => onAdd(productData, qty)}
             >
               Adicionar ao carrinho

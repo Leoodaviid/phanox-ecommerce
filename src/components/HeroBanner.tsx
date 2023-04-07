@@ -10,7 +10,7 @@ interface HeroBannerProps {
 
 const HeroBanner = ({ heroBanner }: HeroBannerProps) => {
   return (
-    <div className={`${styles.paddings} w-full h-[500px] relative bg-[#dcdcdc] rounded-[15px]`}>
+    <div className='p-5 w-full h-[550px] relative bg-[#dcdcdc] rounded-[15px]'>
       <div>
         <p className='text-sm'>{heroBanner.smallText}</p>
         <h3 className='text-2xl sm:text-4xl md:text-6xl font-bold mt-[4px]'>
@@ -28,14 +28,14 @@ const HeroBanner = ({ heroBanner }: HeroBannerProps) => {
           <Link href={`/product/${heroBanner.product}`}>
             <button
               type='button'
-              className='cursor-pointer bg-[#f02d34] rounded-[15px] py-1 px-4 my-10 text-lg font-medium text-white z-10 !important'
+              className='cursor-pointer bg-[#f02d34] rounded-[15px] py-1 px-4 my-16 text-lg font-medium text-white z-10 !important'
             >
               {heroBanner.buttonText}
             </button>
           </Link>
-          <div className='absolute right-[10%] bottom-[5%] flex flex-col max-w-prose text-[#324d67]'>
+          <div className='absolute right-5 bottom-[5%] flex flex-col max-w-prose text-[#324d67]'>
             <h5 className='font-semibold self-end'>Descrição</h5>
-            <p className='text-gray-500 text-end'>{heroBanner.desc}</p>
+            <p className='text-gray-500 text-xs sm:text-sm text-end'>{heroBanner.desc}</p>
           </div>
         </div>
       </div>
