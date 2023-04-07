@@ -5,7 +5,7 @@ import { getProducts, getProductsSlug } from '@/lib/api'
 import { urlFor } from '@/lib/client'
 import { AiOutlineMinus, AiOutlinePlus, AiFillStar, AiOutlineStar } from 'react-icons/ai'
 import { ProductData } from '@/models/models'
-import { useStateContex } from '@/context/StateContext'
+import { useStateContext } from '@/context/StateContext'
 
 interface ProductDetailsProps {
   params: {
@@ -17,7 +17,7 @@ const ProductDetails = ({ params: { slug } }: ProductDetailsProps) => {
   const [productData, setProductData] = useState<ProductData>()
   const [productsData, setProductsData] = useState<ProductData[]>([])
   const [index, setIndex] = useState<number>(0)
-  const { decQty, incQty, qty, onAdd } = useStateContex()
+  const { decQty, incQty, qty, onAdd, setShowCart } = useStateContext()
 
   useEffect(() => {
     const fetchData = async () => {
@@ -34,6 +34,10 @@ const ProductDetails = ({ params: { slug } }: ProductDetailsProps) => {
   }
   const { image, name, details, price } = productData
 
+  const handleBuyNow = () => {
+    onAdd(productData, qty)
+    setShowCart(true)
+  }
   return (
     <div>
       <div className='flex justify-center flex-wrap gap-10 text-[#324d67]'>
@@ -98,7 +102,8 @@ const ProductDetails = ({ params: { slug } }: ProductDetailsProps) => {
             </button>
             <button
               type='button'
-              className='px-5 py-2.5 mt-10 text-lg font-medium cursor-pointer transition-transform duration-500 ease-in bg-[#f02d34] text-white hover:scale-105 z-10'
+              className='px-5 py-2.5 mt-5 text-lg font-medium cursor-pointer transition-transform duration-500 ease-in bg-[#f02d34] text-white hover:scale-105 z-10'
+              onClick={handleBuyNow}
             >
               Compre Agora
             </button>

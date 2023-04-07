@@ -13,12 +13,14 @@ const HeroBanner = ({ heroBanner }: HeroBannerProps) => {
     <div className={`${styles.paddings} w-full h-[500px] relative bg-[#dcdcdc] rounded-[15px]`}>
       <div>
         <p className='text-sm'>{heroBanner.smallText}</p>
-        <h3 className='text-6xl font-bold mt-[4px]'>{heroBanner.midText}</h3>
-        <h1 className='text-white font-bold text-[10em] upercase -ml-5'>{heroBanner.largeText1}</h1>
+        <h3 className='text-2xl sm:text-4xl md:text-6xl font-bold mt-[4px]'>
+          {heroBanner.midText}
+        </h3>
+        <h1 className='text-white font-bold text-[10em] upercase -ml-3'>{heroBanner.largeText1}</h1>
         <img
           src={urlFor(heroBanner.image).url()}
           alt='headphone'
-          className='absolute top-[0%] right-[20%] w-[450px] h-[450px]'
+          className='absolute top-[0%] right-[20%] w-[400px] sm:w-[450px] h-[400px] sm:h-[450px]'
         />
         <div>
           <Link href={`/product/${heroBanner.product}`}>
@@ -30,8 +32,8 @@ const HeroBanner = ({ heroBanner }: HeroBannerProps) => {
             </button>
           </Link>
           <div className='absolute right-[10%] bottom-[5%] w-[300px] flex flex-col text-[#324d67]'>
-            <h5>Description</h5>
-            <p>{heroBanner.desc}</p>
+            <h5 className='font-semibold self-end'>Feedback</h5>
+            <p className='self-end text-gray-500'>{heroBanner.desc}</p>
           </div>
         </div>
       </div>

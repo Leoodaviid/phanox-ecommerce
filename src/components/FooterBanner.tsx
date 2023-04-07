@@ -21,18 +21,22 @@ const FooterBanner = ({
   },
 }: FooterBannerProps) => {
   return (
-    <div className='py-24 px-10 mt-28 bg-[#f02d34] rounded-[15px] relative w-full h-[400px] text-white leading-none'>
-      <div className='flex justify-between'>
-        <div>
-          <p className='m-[18px]'>{discount}</p>
-          <h3 className='font-black text-7xl ml-[25px]'>{largeText1}</h3>
-          <h3 className='font-black text-7xl ml-[25px]'>{largeText2}</h3>
-          <p className='m-[18px]'>{saleTime}</p>
+    <div className='flex justify-center mt-28 bg-[#f02d34] rounded-[15px] relative w-full h-[400px] text-white leading-none'>
+      <div className='w-full flex flex-row justify-around p-5 gap-10 sm:gap-0'>
+        <div className='flex flex-col justify-center gap-5'>
+          <p className=''>{discount}</p>
+          <h3 className='font-black text-3xl sm:text-5xl md:text-7xl ml-[25px]'>
+            {largeText1}
+            <br />
+            {largeText2}
+          </h3>
+
+          <p className=''>{saleTime}</p>
         </div>
-        <div>
-          <p className='text-lg'>{smallText}</p>
-          <h3 className='font-black text-4xl mb-2'>{midText}</h3>
-          <p className='text-lg'>{desc}</p>
+        <div className='flex flex-col justify-end sm:justify-center items-end gap-1'>
+          <p className='text-lg self-end'>{smallText}</p>
+          <h3 className='font-black text-2xl sm:text-4xl mb-2'>{midText}</h3>
+          <p className='text-sm'>{desc}</p>
           <Link href={`/product/${product}`}>
             <button
               type='button'
@@ -45,7 +49,7 @@ const FooterBanner = ({
         <img
           src={urlFor(image).url()}
           alt='imagem de um fone de ouvido'
-          className='absolute -top-[25%] left-[25%]'
+          className='absolute -top-[25%] left-[0%] md:left-[25%]'
         />
       </div>
     </div>

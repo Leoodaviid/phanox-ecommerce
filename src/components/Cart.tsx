@@ -1,6 +1,6 @@
 'use client'
 import { useRef } from 'react'
-import { useStateContex } from '@/context/StateContext'
+import { useStateContext } from '@/context/StateContext'
 import { AiOutlineMinus, AiOutlinePlus, AiOutlineLeft, AiOutlineShopping } from 'react-icons/ai'
 import { TiDeleteOutline } from 'react-icons/ti'
 import { urlFor } from '@/lib/client'
@@ -13,7 +13,7 @@ import Link from 'next/link'
 const Cart = () => {
   const cartRef = useRef<HTMLDivElement>(null)
   const { totalPrice, totalQuanties, cartItems, setShowCart, toggleCartItemQuantity, onRemove } =
-    useStateContex()
+    useStateContext()
 
   const handleCheckout = async () => {
     const checkoutSession: Stripe.Checkout.Session = await fetchPostJSON(
@@ -39,7 +39,7 @@ const Cart = () => {
       className='w-screen bg-[rgba(0, 0, 0, 0.5)] fixed right-0 top-0 z-50 transition-all duration-1000 ease-in-out'
       ref={cartRef}
     >
-      <div className='h-screen w-[600px] bg-white float-right py-10 px-2.5 relative'>
+      <div className='h-screen w-[300px] sm:w-[600px] overflow-y-auto bg-white float-right py-10 px-2.5 relative'>
         <button
           type='button'
           className='flex items-center text-base font-medium cursor-pointer gap-0.5 ml-2.5 border-none bg-transparent'
@@ -52,12 +52,14 @@ const Cart = () => {
         {cartItems.length < 1 && (
           <div className='m-10 flex flex-col justify-center items-center'>
             <AiOutlineShopping size={150} />
-            <h3 className='font-semibold text-xl'>O seu Carrinho de compras está vazio</h3>
+            <h3 className='font-semibold text-sm sm:text-xl text-center'>
+              O seu Carrinho de compras está vazio
+            </h3>
             <Link href='/'>
               <button
                 type='button'
                 onClick={() => setShowCart(false)}
-                className='w-full max-w-[400px] py-2.5 px-3 rounded-[15px] border-none text-xl uppercase bg-[#f02d34] text-white cursor-pointer mt-10 transition-transform duration-500 ease-in hover:scale-110'
+                className='w-full max-w-[400px] py-2.5 px-3 rounded-[15px] border-none text-sm sm:text-xl uppercase bg-[#f02d34] text-white cursor-pointer mt-10 transition-transform duration-500 ease-in hover:scale-110'
               >
                 Continue comprando
               </button>
@@ -67,7 +69,7 @@ const Cart = () => {
         <div className='mt-2'>
           {cartItems.length >= 1 &&
             cartItems.map((item) => (
-              <div className='flex justify-evenly py-5 px-1.5' key={item._id}>
+              <div className='flex justify-evenly py-5 px-1.5 gap-1' key={item._id}>
                 <img
                   src={urlFor(item?.image[0]).url()}
                   alt={item.name}
@@ -109,12 +111,12 @@ const Cart = () => {
             ))}
         </div>
         {cartItems.length >= 1 && (
-          <div className='absolute bottom-[12px] right-[5px] w-full py-[30px] px-[65px]'>
-            <div className='flex justify-between text-xl font-bold'>
+          <div className='static bottom-0  w-full text-center fle'>
+            <div className='flex justify-center gap-5 text-sm sm:text-xl font-bold'>
               <h3>Total:</h3>
               <h3>R${totalPrice},00</h3>
             </div>
-            <div className='w-[400px] m-auto text-center'>
+            <div className='w-[200px] sm:w-[400px] m-auto text-center'>
               <button
                 type='button'
                 className='w-full max-w-[300px] py-2.5 px-3 rounded-[15px] border-none text-xl uppercase bg-[#f02d34] text-white cursor-pointer mt-10 transition-transform duration-500 ease-in hover:scale-110'

@@ -13,11 +13,10 @@ const Home = async () => {
         <h2 className='text-4xl font-extrabold'>Produtos mais vendidos</h2>
         <p className='text-xs font-extralight'>Música no seu estilo</p>
       </div>
-      <div className={`flex flex-wrap justify-center gap-16 mt-2 w-full p-2.5`}>
+      <div className={`flex flex-wrap justify-center gap-16 mt-2 w-full h-full p-2.5`}>
         {productsData?.map((product, index) => (
           <Product key={index} product={product} />
         ))}
-        <br />
       </div>
       <FooterBanner footerBanner={bannerData && bannerData[0]} />
     </>

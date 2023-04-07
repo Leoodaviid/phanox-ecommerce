@@ -1,10 +1,10 @@
 import { AiOutlineShopping } from 'react-icons/ai'
-import { useStateContex } from '@/context/StateContext'
+import { useStateContext } from '@/context/StateContext'
 import Link from 'next/link'
 import Cart from './Cart'
 
 const Navbar = () => {
-  const { showCart, setShowCart, totalQuanties } = useStateContex()
+  const { showCart, setShowCart, totalQuanties } = useStateContext()
   return (
     <div className='flex justify-between relative my-1.5 mx-4'>
       <p className='text-stone-400 text-lg'>
