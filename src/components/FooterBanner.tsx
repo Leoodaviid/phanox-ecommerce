@@ -36,7 +36,7 @@ const FooterBanner = ({
         <div className='flex flex-col justify-end sm:justify-center items-end gap-1'>
           <p className='text-lg self-end'>{smallText}</p>
           <h3 className='font-black text-2xl sm:text-4xl mb-2'>{midText}</h3>
-          <p className='text-sm'>{desc}</p>
+          <p className='text-sm max-w-prose text-end'>{desc}</p>
           <Link href={`/product/${product}`}>
             <button
               type='button'

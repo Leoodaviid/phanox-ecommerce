@@ -16,7 +16,9 @@ const HeroBanner = ({ heroBanner }: HeroBannerProps) => {
         <h3 className='text-2xl sm:text-4xl md:text-6xl font-bold mt-[4px]'>
           {heroBanner.midText}
         </h3>
-        <h1 className='text-white font-bold text-[10em] upercase -ml-3'>{heroBanner.largeText1}</h1>
+        <h1 className='text-white font-bold text-[10em] uppercase -ml-3'>
+          {heroBanner.largeText1}
+        </h1>
         <img
           src={urlFor(heroBanner.image).url()}
           alt='headphone'
@@ -31,9 +33,9 @@ const HeroBanner = ({ heroBanner }: HeroBannerProps) => {
               {heroBanner.buttonText}
             </button>
           </Link>
-          <div className='absolute right-[10%] bottom-[5%] w-[300px] flex flex-col text-[#324d67]'>
-            <h5 className='font-semibold self-end'>Feedback</h5>
-            <p className='self-end text-gray-500'>{heroBanner.desc}</p>
+          <div className='absolute right-[10%] bottom-[5%] flex flex-col max-w-prose text-[#324d67]'>
+            <h5 className='font-semibold self-end'>Descrição</h5>
+            <p className='text-gray-500 text-end'>{heroBanner.desc}</p>
           </div>
         </div>
       </div>
