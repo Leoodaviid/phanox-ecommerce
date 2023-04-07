@@ -45,8 +45,8 @@ export async function POST(req: Request, res: Response) {
         { shipping_rate: 'shr_1MtDRODGCEfyrVG51OLW6rBj' },
         { shipping_rate: 'shr_1MtDShDGCEfyrVG5wJ2Exe3S' },
       ],
-      success_url: `http://localhost:3000/success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `http://localhost:3000/result?session_id={CHECKOUT_SESSION_ID}`,
+      success_url: `${process.env.NEXT_PUBLIC_URL}/success?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${process.env.NEXT_PUBLIC_URL}/result?session_id={CHECKOUT_SESSION_ID}`,
     }
     const checkoutSession: Stripe.Checkout.Session = await stripe.checkout.sessions.create(params)
     return new Response(JSON.stringify(checkoutSession))
