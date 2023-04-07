@@ -1,12 +1,12 @@
 import Stripe from 'stripe'
-import { NextApiRequest, NextApiResponse } from 'next'
+import { NextApiRequest } from 'next'
 import { urlFor } from '@/lib/client'
 import { ProductData } from '@/models/models'
 
 const stripe = new Stripe(process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY!, {
   apiVersion: '2022-11-15',
 })
-
+let request: NextApiRequest
 export async function POST(req: Request, res: Response) {
   const cartItems: ProductData = await req.json()
   if (!cartItems || !Array.isArray(cartItems)) {
@@ -45,8 +45,8 @@ export async function POST(req: Request, res: Response) {
         { shipping_rate: 'shr_1MtDRODGCEfyrVG51OLW6rBj' },
         { shipping_rate: 'shr_1MtDShDGCEfyrVG5wJ2Exe3S' },
       ],
-      success_url: `${process.env.NEXT_PUBLIC_URL}/success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${process.env.NEXT_PUBLIC_URL}/result?session_id={CHECKOUT_SESSION_ID}`,
+      success_url: `${request.headers.origin}/success?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${request.headers.origin}/result?session_id={CHECKOUT_SESSION_ID}`,
     }
     const checkoutSession: Stripe.Checkout.Session = await stripe.checkout.sessions.create(params)
     return new Response(JSON.stringify(checkoutSession))
