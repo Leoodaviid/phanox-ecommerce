@@ -16,15 +16,15 @@ module.exports = {
       keyframes: {
         marquee: {
           from: {
-            transform: 'translateX(50%)'
+            transform: 'translateX(100%)'
           },
           to: {
-            transform: 'translateX(-50%)'
+            transform: 'translateX(-100%)'
           }
         }
       },
       animation: {
-        marquee: 'marquee 10s linear infinite'
+        marquee: 'marquee 15s linear infinite'
       }
     },
   },
