@@ -1,7 +1,7 @@
 'use client'
 import { useState, useEffect } from 'react'
 import { Product } from '@/components'
-import { getProducts, getProductsSlug } from '@/lib/api'
+import { getProducts, getProductBySlug } from '@/lib/api'
 import { urlFor } from '@/lib/client'
 import { AiOutlineMinus, AiOutlinePlus, AiFillStar, AiOutlineStar } from 'react-icons/ai'
 import { ProductData } from '@/models/models'
@@ -22,7 +22,7 @@ const ProductDetails = ({ params: { slug } }: ProductDetailsProps) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const productData = await getProductsSlug(slug)({})
+      const productData = await getProductBySlug(slug)({})
       setProductData(productData)
       const allProductsData = await getProducts({ cache: 'no-store' })
       setProductsData(allProductsData)
