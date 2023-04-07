@@ -24,6 +24,9 @@ type StateContextData = {
   onAdd: (product: ProductData, quantity: number) => void
   toggleCartItemQuantity: (id: string, value: string) => void
   onRemove: (product: ProductData) => void
+  setCartItems: (value: SetStateAction<ProductData[]>) => void
+  setTotalPrice: (value: SetStateAction<number>) => void
+  setTotalQuanties: (value: SetStateAction<number>) => void
 }
 
 const Context = createContext<StateContextData>({} as StateContextData)
@@ -115,6 +118,9 @@ export const StateContext = ({ children }: { children: ReactNode }) => {
         onAdd,
         toggleCartItemQuantity,
         onRemove,
+        setCartItems,
+        setTotalPrice,
+        setTotalQuanties,
       }}
     >
       {children}
@@ -122,4 +128,4 @@ export const StateContext = ({ children }: { children: ReactNode }) => {
   )
 }
 
-export const useStateContex = () => useContext(Context)
+export const useStateContext = () => useContext(Context)
