@@ -9,6 +9,7 @@ import { fetchPostJSON } from '@/utils/apiHelper'
 import getStripe from '@/lib/getStripe'
 import Stripe from 'stripe'
 import Link from 'next/link'
+import { currencyFormat } from '@/utils/currencyFormat'
 
 const Cart = () => {
   const cartRef = useRef<HTMLDivElement>(null)
@@ -114,7 +115,7 @@ const Cart = () => {
           <div className='static bottom-0  w-full text-center fle'>
             <div className='flex justify-center gap-5 text-sm sm:text-xl font-bold'>
               <h3>Total:</h3>
-              <h3>R${totalPrice},00</h3>
+              <h3>{currencyFormat(totalPrice)}</h3>
             </div>
             <div className='w-[200px] sm:w-[400px] m-auto text-center'>
               <button

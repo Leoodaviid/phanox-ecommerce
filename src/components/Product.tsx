@@ -1,6 +1,7 @@
 'use client'
 import { ProductData } from '@/models/models'
 import { urlFor } from '@/lib/client'
+import { currencyFormat } from '@/utils/currencyFormat'
 import Link from 'next/link'
 
 interface ProductProps {
@@ -20,7 +21,7 @@ const Product = ({ product: { image, name, slug, price } }: ProductProps) => {
           />
           <div className=' w-[200px] flex flex-col justify-start'>
             <p className='font-medium mt-2.5'>{name}</p>
-            <p className='font-extrabold text-black'>R${price},00</p>
+            <p className='font-extrabold text-black'>{currencyFormat(price)}</p>
           </div>
         </div>
       </Link>

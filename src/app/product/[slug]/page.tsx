@@ -6,6 +6,7 @@ import { urlFor } from '@/lib/client'
 import { AiOutlineMinus, AiOutlinePlus, AiFillStar, AiOutlineStar } from 'react-icons/ai'
 import { ProductData } from '@/models/models'
 import { useStateContext } from '@/context/StateContext'
+import { currencyFormat } from '@/utils/currencyFormat'
 
 interface ProductDetailsProps {
   params: {
@@ -65,7 +66,7 @@ const ProductDetails = ({ params: { slug } }: ProductDetailsProps) => {
             ))}
           </div>
         </div>
-        <div className='flex flex-col'>
+        <div className='flex flex-col max-w-prose'>
           <h1 className='font-black text-3xl mb-2'>{name}</h1>
           <div className='flex'>
             <div className='flex text-[#f02d34]'>
@@ -79,7 +80,7 @@ const ProductDetails = ({ params: { slug } }: ProductDetailsProps) => {
           </div>
           <h4 className='mb-0 font-bold text-lg'>Detalhes:</h4>
           <p>{details}</p>
-          <p className='text-2xl font-bold mt-4 text-[#f02d34]'>R${price},00</p>
+          <p className='text-2xl font-bold mt-4 text-[#f02d34]'>{currencyFormat(price)}</p>
           <div className='gap-8 mt-2 flex items-center'>
             <h3>Quantidade:</h3>
             <p className='flex items-center border-2 border-zinc-300'>
@@ -102,7 +103,7 @@ const ProductDetails = ({ params: { slug } }: ProductDetailsProps) => {
             </button>
             <button
               type='button'
-              className='px-5 py-2.5 mt-5 text-lg font-medium cursor-pointer transition-transform duration-500 ease-in bg-[#f02d34] text-white hover:scale-105 z-10'
+              className='px-5 py-2.5 mt-5 sm:mt-10 text-lg font-medium cursor-pointer transition-transform duration-500 ease-in bg-[#f02d34] text-white hover:scale-105 z-10'
               onClick={handleBuyNow}
             >
               Compre Agora
