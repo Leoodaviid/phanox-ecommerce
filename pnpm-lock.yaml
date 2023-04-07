@@ -5,6 +5,7 @@ specifiers:
   '@sanity/image-url': ^1.0.2
   '@stripe/stripe-js': ^1.52.0
   '@tsed/stripe': ^7.18.2
+  '@types/canvas-confetti': ^1.6.0
   '@types/node': 18.15.11
   '@types/react': 18.0.31
   '@types/react-dom': 18.0.11
@@ -30,6 +31,7 @@ dependencies:
   '@sanity/image-url': 1.0.2
   '@stripe/stripe-js': 1.52.0
   '@tsed/stripe': 7.18.2_stripe@11.17.0
+  '@types/canvas-confetti': 1.6.0
   '@types/node': 18.15.11
   '@types/react': 18.0.31
   '@types/react-dom': 18.0.11
@@ -398,6 +400,10 @@ packages:
     dependencies:
       stripe: 11.17.0
       tslib: 2.4.0
+    dev: false
+
+  /@types/canvas-confetti/1.6.0:
+    resolution: {integrity: sha512-Yq6rIccwcco0TLD5SMUrIM7Fk7Fe/C0jmNRxJJCLtAF6gebDkPuUjK5EHedxecm69Pi/aA+It39Ux4OHmFhjRw==}
     dev: false
 
   /@types/event-source-polyfill/1.0.1:

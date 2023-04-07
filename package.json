@@ -12,6 +12,7 @@
     "@sanity/image-url": "^1.0.2",
     "@stripe/stripe-js": "^1.52.0",
     "@tsed/stripe": "^7.18.2",
+    "@types/canvas-confetti": "^1.6.0",
     "@types/node": "18.15.11",
     "@types/react": "18.0.31",
     "@types/react-dom": "18.0.11",
