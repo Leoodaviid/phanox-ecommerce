@@ -9,7 +9,7 @@ export const client: SanityClient = new SanityClient({
   apiVersion: process.env.NEXT_PUBLIC_SANITY_API_VERSION ?? '',
   token: process.env.NEXT_PUBLIC_SANITY_TOKEN ?? '',
   useCdn: true,
-  queries: queries,
+  queries: queries.queries,
 })
 
 const builder = imageUrlBuilder({

@@ -1,10 +1,10 @@
-import { BannerData, ProductsData } from '@/models/models'
+import { BannerData, ProductData } from '@/models/models'
 import { client } from './client'
-import { bannerQuery, productsQuery, slugProductQuery } from './queries'
+import { queries, slugProductQuery } from './queries'
 
-export const getProducts = client.createApiUtil<ProductsData[]>(productsQuery)
+export const getProducts = client.createApiUtil<ProductData[]>(queries.productsQuery)
 
-export const getProductsSlug = (slug: string) =>
-  client.createApiUtil<ProductsData>(slugProductQuery(slug))
+export const getBanner = client.createApiUtil<BannerData[]>(queries.bannerQuery)
 
-export const getBanner = client.createApiUtil<BannerData[]>(bannerQuery)
+export const getProductBySlug = (slug: string) =>
+  client.createApiUtil<ProductData>(slugProductQuery(slug))
