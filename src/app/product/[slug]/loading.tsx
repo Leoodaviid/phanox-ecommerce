@@ -3,7 +3,7 @@ import { Skeleton } from '@/components/Skeleton'
 const Loading = () => {
   return (
     <div className='flex justify-center flex-wrap gap-10'>
-      <div className=''>
+      <div>
         <Skeleton type='image' />
         <div className='flex justify-center mt-2 gap-4 overflow-x-auto'>
           <Skeleton type='smallImage' />

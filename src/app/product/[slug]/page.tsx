@@ -103,15 +103,13 @@ const ProductDetails = ({ params: { slug } }: ProductDetailsProps) => {
             <button
               type='button'
               className='border-2 border-[#f02d34] px-5 py-2.5 mt-10 text-lg font-medium cursor-pointer transition-transform duration-500 ease-in text-[#f02d34] hover:scale-105 z-0'
-              onClick={() => onAdd(productData, qty)}
-            >
+              onClick={() => onAdd(productData, qty)}>
               Adicionar ao carrinho
             </button>
             <button
               type='button'
               className='px-5 py-2.5 mt-5 sm:mt-10 text-lg font-medium cursor-pointer transition-transform duration-500 ease-in bg-[#f02d34] text-white hover:scale-105 z-10'
-              onClick={handleBuyNow}
-            >
+              onClick={handleBuyNow}>
               Compre Agora
             </button>
           </div>
