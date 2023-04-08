@@ -8,6 +8,7 @@ import { ProductData } from '@/models/models'
 import { useStateContext } from '@/context/StateContext'
 import { currencyFormat } from '@/utils/currencyFormat'
 import Image from 'next/image'
+import Loading from './loading'
 
 interface ProductDetailsProps {
   params: {
@@ -32,7 +33,7 @@ const ProductDetails = ({ params: { slug } }: ProductDetailsProps) => {
   }, [slug])
 
   if (!productData) {
-    return <div>Loading...</div>
+    return <Loading />
   }
   const { image, name, details, price } = productData
 

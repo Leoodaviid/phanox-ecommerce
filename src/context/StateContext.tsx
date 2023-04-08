@@ -114,8 +114,7 @@ export const StateContext = ({ children }: { children: ReactNode }) => {
         setCartItems,
         setTotalPrice,
         setTotalQuanties,
-      }}
-    >
+      }}>
       {children}
     </Context.Provider>
   )
