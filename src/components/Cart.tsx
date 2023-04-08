@@ -6,10 +6,11 @@ import { TiDeleteOutline } from 'react-icons/ti'
 import { urlFor } from '@/lib/client'
 import { toast } from 'react-hot-toast'
 import { fetchPostJSON } from '@/utils/apiHelper'
+import { currencyFormat } from '@/utils/currencyFormat'
 import getStripe from '@/lib/getStripe'
 import Stripe from 'stripe'
 import Link from 'next/link'
-import { currencyFormat } from '@/utils/currencyFormat'
+import Image from 'next/image'
 
 const Cart = () => {
   const cartRef = useRef<HTMLDivElement>(null)
@@ -71,7 +72,9 @@ const Cart = () => {
           {cartItems.length >= 1 &&
             cartItems.map((item) => (
               <div className='flex justify-evenly py-5 px-1.5 gap-1' key={item._id}>
-                <img
+                <Image
+                  width={200}
+                  height={200}
                   src={urlFor(item?.image[0]).url()}
                   alt={item.name}
                   className='w-3/12 h-1/4 rounded-[15px] bg-[#ebebeb]'

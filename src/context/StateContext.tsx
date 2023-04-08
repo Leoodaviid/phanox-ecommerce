@@ -1,14 +1,6 @@
 'use client'
 import { ProductData } from '@/models/models'
-import {
-  createContext,
-  useContext,
-  useState,
-  useEffect,
-  ReactNode,
-  Dispatch,
-  SetStateAction,
-} from 'react'
+import { createContext, useContext, useState, ReactNode, Dispatch, SetStateAction } from 'react'
 
 import { toast } from 'react-hot-toast'
 
@@ -38,7 +30,6 @@ export const StateContext = ({ children }: { children: ReactNode }) => {
   const [totalPrice, setTotalPrice] = useState<number>(0)
   const [qty, setqty] = useState<number>(1)
   let foundProduct: ProductData | undefined
-  let index
 
   const onAdd = (product: ProductData, quantity: number) => {
     const checkProductInCart = cartItems.find((item) => item._id === product._id)
@@ -47,6 +38,7 @@ export const StateContext = ({ children }: { children: ReactNode }) => {
 
     if (checkProductInCart) {
       const updateCartItems = cartItems
+        // eslint-disable-next-line array-callback-return
         .map((cartProduct) => {
           if (cartProduct._id === product._id)
             return {
@@ -76,7 +68,8 @@ export const StateContext = ({ children }: { children: ReactNode }) => {
 
   const toggleCartItemQuantity = (id: string, value: string) => {
     foundProduct = cartItems.find((item) => item._id === id)
-    index = cartItems.findIndex((product) => product._id === id)
+    // eslint-disable-next-line no-unused-vars
+    const index = cartItems.findIndex((product) => product._id === id)
     const newCartItems = cartItems.filter((item) => item._id !== id)
 
     if (foundProduct) {

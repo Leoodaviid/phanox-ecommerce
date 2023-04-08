@@ -7,6 +7,7 @@ import { AiOutlineMinus, AiOutlinePlus, AiFillStar, AiOutlineStar } from 'react-
 import { ProductData } from '@/models/models'
 import { useStateContext } from '@/context/StateContext'
 import { currencyFormat } from '@/utils/currencyFormat'
+import Image from 'next/image'
 
 interface ProductDetailsProps {
   params: {
@@ -44,7 +45,9 @@ const ProductDetails = ({ params: { slug } }: ProductDetailsProps) => {
       <div className='flex justify-center flex-wrap gap-10 text-[#324d67]'>
         <div>
           <div className=''>
-            <img
+            <Image
+              width={200}
+              height={200}
               src={urlFor(image && image[index]).url()}
               alt='produto'
               className='bg-[#ebebeb] rounded-[15px] w-[400px] h-[400px] cursor-pointer transition-transform duration-500 ease-in-out hover:bg-[#f02d34]'
@@ -52,7 +55,9 @@ const ProductDetails = ({ params: { slug } }: ProductDetailsProps) => {
           </div>
           <div className='flex justify-center mt-2 gap-4'>
             {image?.map((item, i) => (
-              <img
+              <Image
+                width={200}
+                height={200}
                 key={i}
                 src={urlFor(item).url()}
                 alt=''

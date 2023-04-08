@@ -1,6 +1,7 @@
 import { BannerData } from '@/models/models'
 import { urlFor } from '@/lib/client'
 import Link from 'next/link'
+import Image from 'next/image'
 
 // 'use client'
 interface FooterBannerProps {
@@ -46,7 +47,9 @@ const FooterBanner = ({
             </button>
           </Link>
         </div>
-        <img
+        <Image
+          width={400}
+          height={400}
           src={urlFor(image).url()}
           alt='imagem de um fone de ouvido'
           className='absolute -top-[25%] left-[0%] md:left-[25%]'

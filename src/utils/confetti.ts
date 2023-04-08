@@ -9,6 +9,7 @@ export const runFireWorks = () => {
     return Math.random() * (max - min) + min
   }
 
+  // eslint-disable-next-line no-undef
   const interval: NodeJS.Timeout = setInterval(function () {
     const timeLeft = animationEnd - Date.now()
 

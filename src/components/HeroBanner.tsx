@@ -1,8 +1,8 @@
 // 'use client'
-import Link from 'next/link'
-import styles from '../styles'
 import { BannerData } from '@/models/models'
 import { urlFor } from '@/lib/client'
+import Link from 'next/link'
+import Image from 'next/image'
 
 interface HeroBannerProps {
   heroBanner: BannerData
@@ -19,8 +19,10 @@ const HeroBanner = ({ heroBanner }: HeroBannerProps) => {
         <h1 className='text-white font-bold text-[10em] uppercase -ml-3'>
           {heroBanner.largeText1}
         </h1>
-        <img
+        <Image
           src={urlFor(heroBanner.image).url()}
+          width={400}
+          height={400}
           alt='headphone'
           className='absolute top-[0%] right-[20%] w-[400px] sm:w-[450px] h-[400px] sm:h-[450px]'
         />
