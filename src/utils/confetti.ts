@@ -1,20 +1,20 @@
 import confetti from 'canvas-confetti'
 
 export const runFireWorks = () => {
-  let duration = 5 * 1000
-  let animationEnd = Date.now() + duration
-  let defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 }
+  const duration = 5 * 1000
+  const animationEnd = Date.now() + duration
+  const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 }
 
   function randoInRange(min: number, max: number) {
     return Math.random() * (max - min) + min
   }
 
-  let interval: NodeJS.Timeout = setInterval(function () {
-    let timeLeft = animationEnd - Date.now()
+  const interval: NodeJS.Timeout = setInterval(function () {
+    const timeLeft = animationEnd - Date.now()
 
     if (timeLeft <= 0) return clearInterval(interval)
 
-    let particleCount = 50 * (timeLeft / duration)
+    const particleCount = 50 * (timeLeft / duration)
 
     confetti(
       Object.assign({}, defaults, {
