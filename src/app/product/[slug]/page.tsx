@@ -46,14 +46,14 @@ const ProductDetails = ({ params: { slug } }: ProductDetailsProps) => {
         <div>
           <div className=''>
             <Image
-              width={200}
-              height={200}
+              width={400}
+              height={400}
               src={urlFor(image && image[index]).url()}
               alt='produto'
               className='bg-[#ebebeb] rounded-[15px] w-[400px] h-[400px] cursor-pointer transition-transform duration-500 ease-in-out hover:bg-[#f02d34]'
             />
           </div>
-          <div className='flex justify-center mt-2 gap-4'>
+          <div className='flex justify-center mt-2 gap-4 overflow-x-auto'>
             {image?.map((item, i) => (
               <Image
                 width={200}
