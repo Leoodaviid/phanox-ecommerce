@@ -30,8 +30,7 @@ const HeroBanner = ({ heroBanner }: HeroBannerProps) => {
           <Link href={`/product/${heroBanner.product}`}>
             <button
               type='button'
-              className='cursor-pointer bg-[#f02d34] rounded-[15px] py-1 px-4 my-16 text-lg font-medium text-white z-10 !important'
-            >
+              className='cursor-pointer bg-[#f02d34] rounded-[15px] py-1 px-4 my-16 text-lg font-medium text-white z-10 !important'>
               {heroBanner.buttonText}
             </button>
           </Link>

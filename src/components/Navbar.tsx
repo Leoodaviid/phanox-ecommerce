@@ -13,8 +13,7 @@ const Navbar = () => {
       <button
         type='button'
         className='text-2xl text-stone-400 cursor-pointer relative transition-transform duration-300 ease-in hover:scale-125'
-        onClick={() => setShowCart(true)}
-      >
+        onClick={() => setShowCart(true)}>
         <AiOutlineShopping />
         <span className='absolute top-0 -right-2 text-xs text-[#eee] bg-[#f02d34] w-[18px] h-[18px] rounded-full text-center font-semibold'>
           {totalQuanties}

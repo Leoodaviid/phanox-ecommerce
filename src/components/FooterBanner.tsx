@@ -41,8 +41,7 @@ const FooterBanner = ({
           <Link href={`/product/${product}`}>
             <button
               type='button'
-              className='cursor-pointer bg-white rounded-[15px] py-1 px-4 my-5 text-lg font-medium text-[#f02d34] z-10 !important'
-            >
+              className='cursor-pointer bg-white rounded-[15px] py-1 px-4 my-5 text-lg font-medium text-[#f02d34] z-10 !important'>
               {buttonText}
             </button>
           </Link>

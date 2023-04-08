@@ -39,14 +39,12 @@ const Cart = () => {
   return (
     <div
       className='w-screen bg-[rgba(0, 0, 0, 0.5)] fixed right-0 top-0 z-50 transition-all duration-1000 ease-in-out'
-      ref={cartRef}
-    >
+      ref={cartRef}>
       <div className='h-screen w-[300px] sm:w-[600px] overflow-y-auto bg-white float-right py-10 px-2.5 relative'>
         <button
           type='button'
           className='flex items-center text-base font-medium cursor-pointer gap-0.5 ml-2.5 border-none bg-transparent'
-          onClick={() => setShowCart(false)}
-        >
+          onClick={() => setShowCart(false)}>
           <AiOutlineLeft />
           <span className='ml-2.5'>Seu carrinho</span>
           <span className='ml-2.5 text-[#f02d34]'>({totalQuanties} itens)</span>
@@ -61,8 +59,7 @@ const Cart = () => {
               <button
                 type='button'
                 onClick={() => setShowCart(false)}
-                className='w-full max-w-[400px] py-2.5 px-3 rounded-[15px] border-none text-sm sm:text-xl uppercase bg-[#f02d34] text-white cursor-pointer mt-10 transition-transform duration-500 ease-in hover:scale-110'
-              >
+                className='w-full max-w-[400px] py-2.5 px-3 rounded-[15px] border-none text-sm sm:text-xl uppercase bg-[#f02d34] text-white cursor-pointer mt-10 transition-transform duration-500 ease-in hover:scale-110'>
                 Continue comprando
               </button>
             </Link>
@@ -89,15 +86,13 @@ const Cart = () => {
                       <p className='flex items-center w-[100px] border-2 border-zinc-300'>
                         <span
                           className='border-r-2 border-zinc-300 p-2'
-                          onClick={() => toggleCartItemQuantity(item._id, 'dec')}
-                        >
+                          onClick={() => toggleCartItemQuantity(item._id, 'dec')}>
                           <AiOutlineMinus />
                         </span>
                         <span className=' py-0.5 px-2 text-xl'>{item.quantity}</span>
                         <span
                           className='border-l-2 border-zinc-300 p-2'
-                          onClick={() => toggleCartItemQuantity(item._id, 'inc')}
-                        >
+                          onClick={() => toggleCartItemQuantity(item._id, 'inc')}>
                           <AiOutlinePlus />
                         </span>
                       </p>
@@ -105,8 +100,7 @@ const Cart = () => {
                     <button
                       type='button'
                       className='text-2xl text-[#f02d34] cursor-pointer bg-transparent border-none'
-                      onClick={() => onRemove(item)}
-                    >
+                      onClick={() => onRemove(item)}>
                       <TiDeleteOutline />
                     </button>
                   </div>
@@ -125,8 +119,7 @@ const Cart = () => {
                 type='button'
                 className='w-full max-w-[300px] py-2.5 px-3 rounded-[15px] border-none text-xl uppercase bg-[#f02d34] text-white cursor-pointer mt-10 transition-transform duration-500 ease-in hover:scale-110'
                 onClick={handleCheckout}
-                role='link'
-              >
+                role='link'>
                 Pagar
               </button>
             </div>
