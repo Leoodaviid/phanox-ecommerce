@@ -1,8 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    './src/**/*.{js,jsx,ts,tsx}'
-  ],
+  content: ['./src/**/*.{js,jsx,ts,tsx}'],
   mode: 'jit',
   theme: {
     extend: {
@@ -16,17 +14,17 @@ module.exports = {
       keyframes: {
         marquee: {
           from: {
-            transform: 'translateX(100%)'
+            transform: 'translateX(100%)',
           },
           to: {
-            transform: 'translateX(-100%)'
-          }
-        }
+            transform: 'translateX(-100%)',
+          },
+        },
       },
       animation: {
-        marquee: 'marquee 15s linear infinite'
-      }
+        marquee: 'marquee 15s linear infinite',
+      },
     },
   },
   plugins: [],
-};
+}

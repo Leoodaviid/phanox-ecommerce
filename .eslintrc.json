@@ -2,9 +2,11 @@
   "extends": ["next/core-web-vitals", "@rocketseat/eslint-config/react", "prettier"],
   "rules": {
     "prettier/prettier": [
-      "error",
+      "warn",
       {
-        "endOfLine": "auto"
+        "endOfLine": "auto",
+        "parser": "flow",
+        "printWidth": 100
       }
     ]
   }
