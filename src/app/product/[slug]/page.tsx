@@ -28,7 +28,7 @@ const ProductDetails = ({ params: { slug } }: ProductDetailsProps) => {
       setProductsData(allProductsData)
     }
     fetchData()
-  }, [])
+  }, [slug])
 
   if (!productData) {
     return <div>Loading...</div>

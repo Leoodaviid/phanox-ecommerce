@@ -1,14 +1,13 @@
 'use client'
-import { useState, useEffect } from 'react'
+import { useEffect } from 'react'
 import { BsBagCheckFill } from 'react-icons/bs'
-import { useRouter } from 'next/router'
+
 import { useStateContext } from '@/context/StateContext'
 import Link from 'next/link'
 import { runFireWorks } from '@/utils/confetti'
 
 const Success = () => {
   const { setCartItems, setTotalPrice, setTotalQuanties } = useStateContext()
-  const [order, setOrder] = useState(null)
 
   useEffect(() => {
     localStorage.clear()
