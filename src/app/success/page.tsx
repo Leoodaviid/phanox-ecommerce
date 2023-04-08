@@ -15,7 +15,7 @@ const Success = () => {
     setTotalPrice(0)
     setTotalQuanties(0)
     runFireWorks()
-  })
+  }, [setCartItems, setTotalPrice, setTotalQuanties])
 
   return (
     <div className='bg-[#dcdcdc] rounded-[15px] min-w-[60vw] mt-10'>

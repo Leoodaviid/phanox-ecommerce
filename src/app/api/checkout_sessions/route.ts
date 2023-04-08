@@ -45,7 +45,7 @@ export async function POST(req: Request, res: Response) {
         { shipping_rate: 'shr_1MtDShDGCEfyrVG5wJ2Exe3S' },
       ],
       success_url: `https://ecommerce-phanox-tan.vercel.app/success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `https://ecommerce-phanox-tan.vercel.app/result?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `https://ecommerce-phanox-tan.vercel.app/fail?session_id={CHECKOUT_SESSION_ID}`,
     }
     const checkoutSession: Stripe.Checkout.Session = await stripe.checkout.sessions.create(params)
     return new Response(JSON.stringify(checkoutSession))
